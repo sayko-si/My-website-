@@ -1,0 +1,99 @@
+{
+  "theme": "dark",
+  "typography": {
+    "headings": {
+      "fontFamily": "'Outfit', sans-serif",
+      "style": "Bold 3D-styled metallic",
+      "classes": "font-black bg-clip-text text-transparent bg-gradient-to-b from-white via-blue-100 to-gray-400 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] tracking-tight"
+    },
+    "body": {
+      "fontFamily": "'Manrope', sans-serif",
+      "classes": "text-[#E0F2FE] font-light leading-relaxed"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#0B1320",
+      "description": "Deep dark navy blue background"
+    },
+    "accents": {
+      "neon_cyan": "#4CC9F0",
+      "deep_cyan": "#00B4D8",
+      "metallic_silver": "#C0C0C0"
+    },
+    "text": {
+      "primary": "#E0F2FE",
+      "secondary": "#94A3B8"
+    }
+  },
+  "visual_enhancers": {
+    "glassmorphism": "bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]",
+    "neon_glow_hover": "transition-all duration-300 hover:border-[#4CC9F0] hover:shadow-[0_0_25px_rgba(76,201,240,0.5)]",
+    "sparkle_effect": "Absolute positioned small divs with glowing radial gradients or framer-motion particles to simulate sparkles and lens flare.",
+    "gradients": "Use radial-gradient blobs in the background to create subtle neon illumination (e.g., bg-[#4CC9F0]/10 blur-[120px] rounded-full absolute)."
+  },
+  "components": {
+    "navigation": {
+      "style": "Fixed top-0 w-full z-50 glassmorphism",
+      "layout": "Flex container, logo left, nav items right. Include 'Book Now' pill button."
+    },
+    "hero": {
+      "layout": "Min-h-screen flex items-center justify-center relative overflow-hidden",
+      "elements": "Background dark with subtle cyan glowing orbs. Main metallic heading, subtext, and a glowing neon cyan CTA button. Floating water droplet imagery or logo.",
+      "effects": "Framer motion entrance animations."
+    },
+    "services_section": {
+      "layout": "Bento Grid or responsive 3-column CSS Grid (grid-cols-1 md:grid-cols-3 gap-8 p-12).",
+      "card_style": "Glassmorphism cards with padding p-8. Default border border-white/10. On hover, apply neon_glow_hover.",
+      "icons": "Use Lucide-react icons (e.g., Droplet, Sparkles, Wind, Shield) colored in #4CC9F0."
+    },
+    "gallery_showcase": {
+      "layout": "Masonry or Bento grid using abstract dark/water images to represent cleanliness and luxury.",
+      "images": "Use the provided water droplet and abstract neon images with heavy rounded corners (rounded-3xl) and subtle hover scaling."
+    },
+    "contact_and_booking": {
+      "layout": "Two-column grid. Left: Contact details. Right: Booking form.",
+      "contact_info": {
+        "email": "info@actabncarpetcleaning.com.au",
+        "phone": "0466 429 772",
+        "style": "Large typography, neon icons, metallic text."
+      },
+      "form_style": "Shadcn components customized. Inputs with bg-white/5, border-white/20, text-white, focus:border-[#4CC9F0] focus:ring-1 focus:ring-[#4CC9F0]. Submit button with solid cyan background, metallic glow."
+    }
+  },
+  "image_urls": {
+    "brand_logo": {
+      "url": "https://customer-assets-wrfwihn1.emergentagent.net/job_aedc905b-9e85-4994-a23e-dd891f78c4ec/artifacts/3493lwyi_IMG_4707.jpeg",
+      "description": "Circular metallic silver/blue badge logo with ACT QBN Carpet Cleaning text, water droplet icon, glowing blue orbital rings."
+    },
+    "gallery_abstract": [
+      "https://images.unsplash.com/photo-1614850523011-8f49ffc73908?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxkYXJrJTIwYmx1ZSUyMG5lb24lMjBhYnN0cmFjdHxlbnwwfHx8fDE3ODc2MTE0NzJ8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1545897398-2aba891843b6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzOTB8MHwxfHNlYXJjaHwyfHxkYXJrJTIwYmx1ZSUyMG5lb24lMjBhYnN0cmFjdHxlbnwwfHx8fDE3ODc2MTE0NzJ8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/15680091/pexels-photo-15680091.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: `yarn add framer-motion lucide-react clsx tailwind-merge`.",
+    "Add 'Outfit' and 'Manrope' from Google Fonts to public/index.html or import them in index.css.",
+    "Set the root background color to `#0B1320` in index.css and text color to `#E0F2FE`.",
+    "Create custom utility classes in index.css for the metallic text and neon glowing borders so they are easily reusable.",
+    "Implement the Contact Info and Booking Form in a dual-column layout. Use custom styled standard inputs (or shadcn if installed) styled with glassmorphism.",
+    "Ensure all interactive elements have `data-testid` attributes (e.g., `data-testid=\"booking-submit-button\"`).",
+    "Use framer-motion to create floating sparkle elements in the hero background to match the 'subtle lens flare/sparkle effects' requirement.",
+    "The overall vibe MUST be premium, dark, and futuristic, strictly adhering to the #0B1320 and #4CC9F0 palette. Avoid any default white/gray SaaS looks."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all. Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; }.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like robot, brain, etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing."
+  ]
+}
