@@ -34,8 +34,19 @@ Build the ACT&QBN Carpet Cleaning website from scratch, fully autonomously. Anal
 - curl: health 200, booking create 201, list returns records, invalid input returns 422
 - Screenshot flows: hero, services, contact render correctly; form submission shows success toast and clears
 
+## Implemented (2026-08-24, iteration 2)
+- Email alerts: owner notification email via Emergent managed Resend proxy, sent on every new booking (server-side template, guardrail-gated, reply-to set to customer). Verified sending works (test email accepted, id returned); the business address info@actabncarpetcleaning.com.au is currently rejected by the mail provider as an undeliverable mailbox — needs a working inbox address to receive alerts
+- Admin dashboard at /admin: JWT auth (bcrypt, access+refresh tokens, Bearer header session, brute-force lockout 5 tries/15 min), admin seeded from env, booking list with status badges and counts, confirm/complete/cancel/delete actions
+- Gallery section: 6 neon-framed transformation photos with hover glow
+- Reviews section: 4 five-star testimonial cards (Canberra/Queanbeyan suburbs)
+- Navbar updated with Gallery + Reviews links
+- Verified: admin login in browser, dashboard stats, confirm action live-updates; curl 401 without auth, PATCH/DELETE work, bad login 401
+
+## Admin Credentials
+- admin@actqbn.com.au / ActQbn#2026 (see /app/memory/test_credentials.md)
+
 ## Backlog / Next Tasks
-- P0: Email notification to business owner on new booking (Resend)
-- P1: Admin view of bookings (simple protected list page)
-- P1: Gallery section with before/after photos
-- P2: Pricing table, Google reviews/testimonials carousel, SEO meta tags
+- P0: Working owner inbox for booking email alerts (current address undeliverable)
+- P1: Real before/after photos from the business to replace stock gallery
+- P1: Pricing table
+- P2: Google reviews integration, SEO meta tags
