@@ -6,7 +6,7 @@ import {
   Mail, Phone, CalendarDays, Droplets, MessageSquare,
 } from "lucide-react";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = "/api";
 
 function formatApiErrorDetail(detail) {
   if (detail == null) return "Something went wrong. Please try again.";
