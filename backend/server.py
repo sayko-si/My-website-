@@ -172,9 +172,8 @@ async def get_current_user(request: Request) -> dict:
     return user
 
 async def seed_admin():
-    admin_email = "admin.actqbncc@gmail.com"
-    admin_password = "mlpmlp652"
-    
+    admin_email = os.environ["ADMIN_EMAIL"].lower()
+    admin_password = os.environ["ADMIN_PASSWORD"]
     existing = await db.users.find_one({"email": admin_email})
     if existing is None:
         await db.users.insert_one({
@@ -185,11 +184,8 @@ async def seed_admin():
             "role": "admin",
             "created_at": datetime.now(timezone.utc).isoformat(),
         })
-    else:
-        await db.users.update_one(
-            {"email": admin_email},
-            {"$set": {"password_hash": hash_password(admin_password)}}
-        )
+    elif not verify_password(admin_password, existing["password_hash"]):
+        await db.users.update_one({"email": admin_email}, {"$set": {"password_hash": hash_password(admin_password)}})
 
 
 @app.on_event("startup")
