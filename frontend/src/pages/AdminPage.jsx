@@ -76,8 +76,10 @@ const AdminPage = () => {
       setToken(data.access_token);
       setAuth(data);
       toast.success(`Welcome back, ${data.name}.`);
-    } catch (err) {
-      setError(formatApiErrorDetail(err.response?.data?.detail));
+    }  catch (err) {
+    console.error("Login Error Details:", err); // أضف هذا السطر للطباعة في المتصفح
+    setError(formatApiErrorDetail(err.response?.data?.detail));
+}
     } finally {
       setLoggingIn(false);
     }
