@@ -70,18 +70,16 @@ const AdminPage = () => {
     e.preventDefault();
     setLoggingIn(true);
     setError("");
-    try {
-      const { data } = await axios.post(`${API}/auth/login`, { email, password });
-      localStorage.setItem("aq_admin_token", data.access_token);
-      setToken(data.access_token);
-      setAuth(data);
-      toast.success(`Welcome back, ${data.name}.`);
-} catch (err) {
-        console.error("Login Error Details:", err);
+  try {
+        const { data } = await axios.post(${API}/auth/login, { email, password });
+        localStorage.setItem("aq_admin_token", data.access_token);
+        setToken(data.access_token);
+        setAuth(data);
+        toast.success(Welcome back, ${data.name}.);
+    } catch (err) {
         setError(formatApiErrorDetail(err.response?.data?.detail));
-    }
     } finally {
-      setLoggingIn(false);
+        setLoggingIn(false);
     }
   };
 
